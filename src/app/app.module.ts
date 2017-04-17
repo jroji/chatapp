@@ -5,6 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { mainStoreReducer } from "./state-management/reducers/main.reducer";
+import { StoreModule } from "@ngrx/store";
+
+const reducers = { mainStoreReducer };
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +17,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    StoreModule.provideStore(reducers)
   ],
   providers: [],
   bootstrap: [AppComponent]

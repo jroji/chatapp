@@ -1,3 +1,6 @@
 <h1>
   {{title}}
 </h1>
+<h2 [@animateCounter]="parity">{{data}}</h2>
+<button (click)="increment()">Incrementar</button>
+<button (click)="reset()">Reset</button>
