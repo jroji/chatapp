@@ -1,0 +1,9 @@
+<ul class="chat-list">
+  <li
+    *ngFor="let message of messages; let i = index"
+    [ngClass]="{'message-left': i % 2 == 0}">
+
+    <p>{{ message.username }}: </p>
+    <p >{{ message.message }}</p>
+  </li>
+</ul>

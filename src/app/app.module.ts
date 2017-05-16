@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 
 import { mainStoreReducer } from "./state-management/reducers/main.reducer";
 import { StoreModule } from "@ngrx/store";
+import {TextEditorComponent} from "./components/text-editor/text-editor.component";
+import {ChatBoardComponent} from "./components/chat-board/chat-board.component";
 
 const reducers = { mainStoreReducer };
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TextEditorComponent,
+    ChatBoardComponent
   ],
   imports: [
     BrowserModule,

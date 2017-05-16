@@ -1,8 +1,8 @@
 //main.state.ts
 export interface State {
-  counter: number;
+  messages: Array<any>;
 };
 
 export const initialState: State = {
-  counter: 10
+  messages:[]
 };
