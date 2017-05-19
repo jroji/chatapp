@@ -9,6 +9,9 @@ import { mainStoreReducer } from "./state-management/reducers/main.reducer";
 import { StoreModule } from "@ngrx/store";
 import {TextEditorComponent} from "./components/text-editor/text-editor.component";
 import {ChatBoardComponent} from "./components/chat-board/chat-board.component";
+import {AngularFireModule} from "angularfire2";
+import {environment} from "../environments/environment";
+import {MessagesService} from "./messages.service";
 
 const reducers = { mainStoreReducer };
 
@@ -22,9 +25,10 @@ const reducers = { mainStoreReducer };
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore(reducers)
+    StoreModule.provideStore(reducers),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [MessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

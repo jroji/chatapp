@@ -3,7 +3,7 @@
     *ngFor="let message of messages; let i = index"
     [ngClass]="{'message-left': i % 2 == 0}">
 
-    <p>{{ message.username }}: </p>
+    <p class="name">{{ message.username }}: </p>
     <p >{{ message.message }}</p>
   </li>
 </ul>

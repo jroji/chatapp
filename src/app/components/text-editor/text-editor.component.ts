@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {State} from "../../state-management/state/main.state";
 import {SEND_MESSAGE} from "../../state-management/actions/main.actions";
+import {MessagesService} from "../../messages.service";
 
 @Component({
   selector: 'app-text-editor',
@@ -36,7 +37,7 @@ export class TextEditorComponent implements OnInit {
   messagesArray: Array<Object>;
   isActive: Boolean;
 
-  constructor(private store: Store<State>) {
+  constructor(private messagesService: MessagesService) {
     this.usernameLabel = 'Username';
     this.messageLabel = 'Message';
     this.buttonLabel = 'Send';
@@ -44,8 +45,6 @@ export class TextEditorComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Select the reducer in order to search the dispatched events
-    this.store.select('mainStoreReducer');
   }
 
   /**
@@ -53,12 +52,9 @@ export class TextEditorComponent implements OnInit {
    */
   sendMessage(): void {
     if(this.validateMessage()) {
-      this.store.dispatch({
-        type: SEND_MESSAGE,
-        payload: {
-          message: this.message,
-          username: this.username
-        }
+      this.messagesService.pushMessage({
+        message: this.message,
+        username: this.username
       });
       this.resetForm();
     }

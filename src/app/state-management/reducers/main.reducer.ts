@@ -11,6 +11,11 @@ export const mainStoreReducer: ActionReducer<State> = (state = initialState, act
       state.messages.push(action.payload);
       return state;
     }
+    case ACTIONS.GET_MESSAGES: {
+      return {
+        messages: action.payload
+      };
+    }
     default: {
       return state;
     }
