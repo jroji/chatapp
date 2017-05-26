@@ -1,3 +1,22 @@
-<sebm-google-map [latitude]="lat" [longitude]="lng">
+<sebm-google-map
+  [latitude]="lat"
+  [longitude]="lng">
   <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
 </sebm-google-map>
+{{newUser.controls.address.controls.latitude.value}}
+<form [formGroup]="newUser">
+  <div formGroupName="user">
+    <label>Name</label>
+    <input type="text" formControlName="name">
+    <label>Surname</label>
+    <input type="text" formControlName="name">
+  </div>
+
+  <div formGroupName="address">
+    <p>{{address}}</p>
+    <label>Latitude</label>
+    <input type="number" formControlName="latitude">
+    <label>Longitude</label>
+    <input type="number" formControlName="longitude">
+  </div>
+</form>
