@@ -9,6 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "firebase:login": "firebase login",
+    "firebase:init": "firebase init",
+    "firebase:deploy": "firebase deploy",
     "docs": "compodoc -p tsconfig.json"
   },
   "private": true,
@@ -24,6 +27,7 @@
     "@compodoc/compodoc": "^1.0.0-beta.3",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
+    "angular2-google-maps": "^0.17.0",
     "angularfire2": "^2.0.0-beta.7-pre",
     "core-js": "^2.4.1",
     "firebase": "^3.9.0",

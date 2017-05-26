@@ -1,8 +1,8 @@
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {Injectable} from "@angular/core";
 import {Store} from "@ngrx/store";
-import {State} from "./state-management/state/main.state";
-import {GET_MESSAGES} from "./state-management/actions/main.actions";
+import {State} from "../state-management/state/main.state";
+import {GET_MESSAGES} from "../state-management/actions/main.actions";
 
 @Injectable()
 export class MessagesService {

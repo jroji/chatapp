@@ -1,0 +1,14 @@
+<form #inputForm="ngForm">
+  <div class="input-group">
+    <label for="username">{{usernameLabel}}</label>
+    <input #user id="username" name="username" type="text" [(ngModel)]="username" required>
+    <p [hidden]="user.valid || user.pristine">El campo es obligatorio</p>
+  </div>
+
+  <div class="input-group">
+    <label for="message">{{messageLabel}}</label>
+    <textarea name="message" [(ngModel)]="message" required></textarea>
+  </div>
+
+  <button (click)="sendMessage()">{{buttonLabel}}</button>
+</form>

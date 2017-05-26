@@ -1,0 +1,38 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /Users/roji/dev/chatapp/node_modules/.bin/firebase deploy
+[debug] CLI Version:  3.9.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.10.2
+[debug] Time:         Fri May 19 2017 19:09:12 GMT+0200 (CEST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/suPKdo6eHVfvpFQIA4RNXFuqhbnvh4FBkYEOYr2LPQ0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri May 19 2017 19:09:12 GMT+0200 (CEST)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/angular2-curso-ae117  
+ Fri May 19 2017 19:09:12 GMT+0200 (CEST)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/angular2-curso-ae117/tokens  
+ Fri May 19 2017 19:09:13 GMT+0200 (CEST)
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'angular2-curso-ae117'...
+[info] 
+[debug] TypeError: targetNames.join is not a function
+    at deploy (/Users/roji/dev/chatapp/node_modules/firebase-tools/lib/deploy/index.js:68:57)
+    at Command._action (/Users/roji/dev/chatapp/node_modules/firebase-tools/commands/deploy.js:47:12)
+    at /Users/roji/dev/chatapp/node_modules/firebase-tools/lib/command.js:176:29
+    at tryCatch (/Users/roji/dev/chatapp/node_modules/rsvp/dist/rsvp.js:539:12)
+    at invokeCallback (/Users/roji/dev/chatapp/node_modules/rsvp/dist/rsvp.js:554:13)
+    at publish (/Users/roji/dev/chatapp/node_modules/rsvp/dist/rsvp.js:522:7)
+    at flush (/Users/roji/dev/chatapp/node_modules/rsvp/dist/rsvp.js:2414:5)
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[error] 
+[error] Error: An unexpected error has occurred.

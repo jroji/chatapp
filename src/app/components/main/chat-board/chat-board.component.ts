@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {State} from "../../state-management/state/main.state";
-import {MessagesService} from "../../messages.service";
+import {State} from "../../../state-management/state/main.state";
+import {MessagesService} from "../../../services/messages.service";
 
 @Component({
   selector: 'app-chat-board',
@@ -18,7 +18,6 @@ export class ChatBoardComponent implements OnInit {
 
   ngOnInit() {
     this.store.select('mainStoreReducer').subscribe((state) => {
-      console.log(state);
       this.messages = state['messages'];
     });
   }

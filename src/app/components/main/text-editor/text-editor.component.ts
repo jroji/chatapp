@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {State} from "../../state-management/state/main.state";
-import {SEND_MESSAGE} from "../../state-management/actions/main.actions";
-import {MessagesService} from "../../messages.service";
+import {State} from "../../../state-management/state/main.state";
+import {SEND_MESSAGE} from "../../../state-management/actions/main.actions";
+import {MessagesService} from "../../../services/messages.service";
 
 @Component({
   selector: 'app-text-editor',

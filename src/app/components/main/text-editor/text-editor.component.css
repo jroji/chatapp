@@ -20,3 +20,11 @@
 input, textarea {
   border: 1px solid gray;
 }
+
+input.ng-invalid.ng-dirty {
+  border: 1px solid red;
+}
+
+textarea.ng-invalid.ng-dirty {
+  border: 1px solid red;
+}
