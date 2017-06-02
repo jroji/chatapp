@@ -1,9 +1,15 @@
+<button (click)="toggleStatus()"> Toggle active!</button>
 <ul class="chat-list">
-  <li
+  <li [@heroState]="status"
+      (@heroState.done)="alertAll()"
     *ngFor="let message of messages; let i = index"
     [ngClass]="{'message-left': i % 2 == 0}">
 
+    <div *ngIf="readyYet">✓</div>
     <p class="name">{{ message.username }}: </p>
     <p >{{ message.message }}</p>
   </li>
 </ul>
+
+
+if (true == 'true')
