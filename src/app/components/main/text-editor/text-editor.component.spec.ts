@@ -13,6 +13,9 @@ import {AgmCoreModule} from "angular2-google-maps/esm/core";
 describe('TextEditorComponent', () => {
   let component: TextEditorComponent;
   let fixture: ComponentFixture<TextEditorComponent>;
+  let messagesServiceMock = {
+    pushMessage: jasmine.createSpy('pushMessage')
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,7 +27,9 @@ describe('TextEditorComponent', () => {
         AngularFireModule.initializeApp(environment.firebase),
         AgmCoreModule.forRoot({apiKey: 'AIzaSyBTHsJPaZ-MYlCvrhwPwLFtDzOxFJEdaRc'})
       ],
-      providers: [MessagesService]
+      providers: [
+        { provide: MessagesService, useValue: messagesServiceMock}
+      ]
     })
     .compileComponents();
   }));
@@ -44,5 +49,18 @@ describe('TextEditorComponent', () => {
 
     expect(component['username']).toBe('');
     expect(component['message']).toBe('');
+  });
+
+  fit('messageService to be called', () => {
+    component['username'] = 'Juan';
+    component['message'] = '123456';
+
+    fixture.detectChanges();
+
+    component.sendMessage();
+
+    expect(component['username']).toBe('');
+    expect(component['message']).toBe('');
+    expect(messagesServiceMock.pushMessage).toHaveBeenCalled();
   });
 });
