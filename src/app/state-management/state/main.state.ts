@@ -4,5 +4,7 @@ export interface State {
 };
 
 export const initialState: State = {
-  messages:[]
+  messages: []
 };
+
+const vital = 5;
